@@ -3,4 +3,9 @@ FROM ubuntu:20.04
 ARG NEXTCLADE_VERSION="0.14.1"
 
 ADD https://github.com/nextstrain/nextclade/releases/download/${NEXTCLADE_VERSION}/nextclade-Linux-x86_64 /usr/bin/nextclade
-RUN chmod 755 /usr/bin/nextclade
+RUN mkdir /opt/nextclade-data
+ADD https://raw.githubusercontent.com/nextstrain/nextclade/${NEXTCLADE_VERSION}/data/sars-cov-2/reference.fasta /opt/nextclade-data/
+ADD https://raw.githubusercontent.com/nextstrain/nextclade/${NEXTCLADE_VERSION}/data/sars-cov-2/tree.json /opt/nextclade-data/
+ADD https://raw.githubusercontent.com/nextstrain/nextclade/${NEXTCLADE_VERSION}/data/sars-cov-2/qc.json /opt/nextclade-data/
+ADD https://raw.githubusercontent.com/nextstrain/nextclade/${NEXTCLADE_VERSION}/data/sars-cov-2/genemap.gff /opt/nextclade-data/
+RUN chmod 755 /usr/bin/nextclade /opt/nextclade-data; chmod 644 /opt/nextclade-data/*
