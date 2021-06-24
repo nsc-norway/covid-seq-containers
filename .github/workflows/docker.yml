@@ -11,7 +11,7 @@ jobs:
         run: |
           PANGOLIN_VERSION=3.1.4
           PANGOLIN_LEARN_VERSION=2021-06-15
-          BASE_PATH=ghcr.io/${{ github.repository_owner }}/covid-seq
+          BASE_PATH=ghcr.io/${{ github.repository_owner }}/covid-seq-containers
           TAGS="${BASE_PATH}/${GITHUB_REF_SLUG}/pangolin_nsc:$PANGOLIN_LEARN_VERSION"
           echo ::set-output name=tags::${TAGS}
           echo ::set-output name=PANGOLIN_LEARN_VERSION::${PANGOLIN_LEARN_VERSION}
@@ -43,7 +43,7 @@ jobs:
       - name: Prepare
         id: prep
         run: |
-          BASE_PATH=ghcr.io/${{ github.repository_owner }}/covid-seq
+          BASE_PATH=ghcr.io/${{ github.repository_owner }}/covid-seq-containers
           TAGS="${BASE_PATH}/${GITHUB_REF_SLUG}/nsc_r:1.0"
           echo ::set-output name=tags::${TAGS}
       - name: Set up Docker Buildx
@@ -70,7 +70,7 @@ jobs:
       - name: Prepare
         id: prep
         run: |
-          BASE_PATH=ghcr.io/${{ github.repository_owner }}/covid-seq
+          BASE_PATH=ghcr.io/${{ github.repository_owner }}/covid-seq-containers
           TAGS="${BASE_PATH}/${GITHUB_REF_SLUG}/nsc_python:1.0"
           echo ::set-output name=tags::${TAGS}
       - name: Set up Docker Buildx
@@ -97,7 +97,7 @@ jobs:
       - name: Prepare
         id: prep
         run: |
-          BASE_PATH=ghcr.io/${{ github.repository_owner }}/covid-seq
+          BASE_PATH=ghcr.io/${{ github.repository_owner }}/covid-seq-containers
           TAGS="${BASE_PATH}/${GITHUB_REF_SLUG}/ivar:1.3_nsc"
           echo ::set-output name=tags::${TAGS}
       - name: Set up Docker Buildx
@@ -124,7 +124,7 @@ jobs:
       - name: Prepare
         id: prep
         run: |
-          BASE_PATH=ghcr.io/${{ github.repository_owner }}/covid-seq
+          BASE_PATH=ghcr.io/${{ github.repository_owner }}/covid-seq-containers
           TAGS="${BASE_PATH}/${GITHUB_REF_SLUG}/bcftools:1.11"
           echo ::set-output name=tags::${TAGS}
       - name: Set up Docker Buildx
