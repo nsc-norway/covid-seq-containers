@@ -114,6 +114,14 @@ singularity build pangolin_nsc_2021-04-28.sif docker-archive://Docker/pangolin_n
 ln -sf pangolin_nsc_2021-04-28.sif pangolin.sif
 
 
+# 2021 Jun 24 - pangoLEARN=2021-06-15 ; pangolin=3.1.4
+# (Not putting this in production)
+docker build -t pangolin_nsc:2021-06-15 - < Docker/pangolin_Dockerfile
+docker save pangolin_nsc:2021-06-15 -o Docker/pangolin_nsc_2021-06-15_docker.tar
+singularity build pangolin_nsc_2021-06-15.sif docker-archive://Docker/pangolin_nsc_2021-06-15_docker.tar
+ln -sf pangolin_nsc_2021-06-15.sif pangolin.sif
+
+
 # Check https://github.com/nextstrain/nextclade/releases
 # Specify the most recent release when you do docker pull
 # Change local tag in the file name to present date

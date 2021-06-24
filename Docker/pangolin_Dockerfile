@@ -1,8 +1,8 @@
 FROM ubuntu:xenial
 
 ENV PANGOLIN_VERSION="3.1.4"\
-  PANGOLIN_LEARN_VERSION="2021-06-16"
-
+  PANGOLIN_LEARN_VERSION="2021-06-15"
+  
 LABEL base.image="ubuntu:xenial"
 LABEL dockerfile.version="1"
 LABEL software="pangolin"
@@ -25,10 +25,10 @@ RUN apt-get update && apt-get install -y \
   build-essential
 
 # get miniconda and the pangolin repo
-RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh && \
+RUN wget -q https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh && \
  bash ./Miniconda3-latest-Linux-x86_64.sh -p /miniconda -b  && \
   rm Miniconda3-latest-Linux-x86_64.sh && \
-  wget "https://github.com/cov-lineages/pangolin/archive/v${PANGOLIN_VERSION}.tar.gz" && \
+  wget -q "https://github.com/cov-lineages/pangolin/archive/v${PANGOLIN_VERSION}.tar.gz" && \
   tar -xf v${PANGOLIN_VERSION}.tar.gz && \
   mv pangolin-${PANGOLIN_VERSION} pangolin
 
@@ -49,16 +49,10 @@ RUN cd pangolin && \
 
 RUN /bin/bash -c 'cd .. && \
  source activate pangolin && \
- wget https://github.com/cov-lineages/pangoLEARN/archive/${PANGOLIN_LEARN_VERSION}.tar.gz && \
+ wget -q https://github.com/cov-lineages/pangoLEARN/archive/${PANGOLIN_LEARN_VERSION}.tar.gz && \
  tar -xf ${PANGOLIN_LEARN_VERSION}.tar.gz && \
  cd pangoLEARN-${PANGOLIN_LEARN_VERSION} && \
  pip install .'
-
-# install the latest lineages release
-# looks like it will be deprecated
-# because no more tagged releases are planned,
-# I am working off commit hashes to aid in
-# reproduciability
 
 WORKDIR /data
 

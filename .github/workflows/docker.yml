@@ -24,7 +24,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: .
-          file: ./Docker/pangolin_2.4.1_Dockerfile
+          file: ./Docker/pangolin_Dockerfile
           push: true
           tags: ${{ steps.prep.outputs.tags }}
   docker-nsc_r:
