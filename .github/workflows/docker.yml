@@ -45,7 +45,7 @@ jobs:
         run: |
           NEXTCLADE_VERSION=1.1.0
           BASE_PATH=ghcr.io/${{ github.repository_owner }}/covid-seq-containers
-          TAGS="${BASE_PATH}/${GITHUB_REF_SLUG}/nextclade:$NEXTCLADE_VERSION"
+          TAGS="${BASE_PATH}/${GITHUB_REF_SLUG}/nextclade_nsc:$NEXTCLADE_VERSION"
           echo ::set-output name=tags::${TAGS}
           echo ::set-output name=NEXTCLADE_VERSION::${NEXTCLADE_VERSION}
       - name: Set up Docker Buildx
