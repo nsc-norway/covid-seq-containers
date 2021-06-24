@@ -1,0 +1,6 @@
+FROM ubuntu:20.04
+
+ARG NEXTCLADE_VERSION="0.14.1"
+
+ADD https://github.com/nextstrain/nextclade/releases/download/${NEXTCLADE_VERSION}/nextclade-Linux-x86_64 /usr/bin/nextclade
+RUN chmod 755 /usr/bin/nextclade
