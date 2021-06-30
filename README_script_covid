@@ -6,8 +6,12 @@
 docker pull nfcore/viralrecon:1.1.0
 docker save nfcore/viralrecon:1.1.0 -o Docker/nfcore_viralrecon_1.1.0_docker.tar 
 singularity build nfcore_viralrecon_1.1.0.sif docker-archive://Docker/nfcore_viralrecon_1.1.0_docker.tar
+
 docker save ghcr.io/nsc-norway/nsctrim:1.5.3 -o Docker/nsctrim-1.5.3_docker.tar 
 singularity build nsctrim-1.5.3.sif docker-archive://Docker/nsctrim-1.5.3_docker.tar 
+
+docker save garcianacho/csak:V2 -o Docker/garcianacho_csak_V2_docker.tar
+singularity build garcianacho_csak_V2.sif Docker/garcianacho_csak_V2_docker.tar
 
 # 2. Docker images created from  local Dockerfiles
 
