@@ -11,7 +11,7 @@ docker save ghcr.io/nsc-norway/nsctrim:1.5.3 -o Docker/nsctrim-1.5.3_docker.tar
 singularity build nsctrim-1.5.3.sif docker-archive://Docker/nsctrim-1.5.3_docker.tar 
 
 docker save garcianacho/csak:V2 -o Docker/garcianacho_csak_V2_docker.tar
-singularity build garcianacho_csak_V2.sif docker-archive://Docker/garcianacho_csak_V2_docker.tar
+singularity build garcianacho_csak-V2.sif docker-archive://Docker/garcianacho_csak_V2_docker.tar
 
 # 2. Docker images created from  local Dockerfiles
 
