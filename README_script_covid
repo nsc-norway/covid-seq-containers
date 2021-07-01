@@ -158,8 +158,14 @@ docker save nextstrain/nextclade:0.14.2 -o Docker/nextclade_docker_20210407.tar
 singularity build nextclade_20210407.sif docker-archive://Docker/nextclade_docker_20210407.tar
 ln -sf nextclade_20210407.sif nextclade.sif
 
-# 2021 Apr 24
+# 2021 Jun 24
 docker build -t nextclade_nsc:1.1.0 --build-arg NEXTCLADE_VERSION=1.1.0 - < Docker/nextclade_Dockerfile
 docker save nextclade_nsc:1.1.0 -o Docker/nextclade_nsc_1.1.0_docker.tar
 singularity build nextclade_1.1.0.sif docker-archive://Docker/nextclade_nsc_1.1.0_docker.tar
 ln -sf nextclade_1.1.0.sif nextclade.sif
+
+# 2021 Jul 01
+docker build -t nextclade_nsc:1.2.0 --build-arg NEXTCLADE_VERSION=1.2.0 - < Docker/nextclade_Dockerfile
+docker save nextclade_nsc:1.2.0 -o Docker/nextclade_nsc_1.2.0_docker.tar
+singularity build nextclade_1.2.0.sif docker-archive://Docker/nextclade_nsc_1.2.0_docker.tar
+ln -sf nextclade_1.2.0.sif nextclade.sif

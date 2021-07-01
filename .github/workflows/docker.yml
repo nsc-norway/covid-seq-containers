@@ -43,7 +43,7 @@ jobs:
       - name: Prepare
         id: prep
         run: |
-          NEXTCLADE_VERSION=1.1.0
+          NEXTCLADE_VERSION=1.2.0
           BASE_PATH=ghcr.io/${{ github.repository_owner }}/covid-seq-containers
           TAGS="${BASE_PATH}/${GITHUB_REF_SLUG}/nextclade_nsc:$NEXTCLADE_VERSION"
           echo ::set-output name=tags::${TAGS}
