@@ -9,8 +9,8 @@ jobs:
       - name: Prepare
         id: prep
         run: |
-          PANGOLIN_VERSION=3.1.5
-          PANGOLIN_LEARN_VERSION=2021-06-15
+          PANGOLIN_VERSION=3.1.10
+          PANGOLIN_LEARN_VERSION=2021-07-28
           BASE_PATH=ghcr.io/${{ github.repository_owner }}/covid-seq-containers
           TAGS="${BASE_PATH}/${GITHUB_REF_SLUG}/pangolin_nsc:$PANGOLIN_LEARN_VERSION"
           echo ::set-output name=tags::${TAGS}
@@ -43,7 +43,7 @@ jobs:
       - name: Prepare
         id: prep
         run: |
-          NEXTCLADE_VERSION=1.2.0
+          NEXTCLADE_VERSION=1.2.2
           BASE_PATH=ghcr.io/${{ github.repository_owner }}/covid-seq-containers
           TAGS="${BASE_PATH}/${GITHUB_REF_SLUG}/nextclade_nsc:$NEXTCLADE_VERSION"
           echo ::set-output name=tags::${TAGS}
