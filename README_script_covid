@@ -187,6 +187,25 @@ docker save pangolin_nsc:2021-09-28 -o Docker/pangolin_nsc_2021-09-28_docker_2.t
 singularity build pangolin_nsc_2021-09-28.sif docker-archive://Docker/pangolin_nsc_2021-09-28_docker_2.tar
 ln -sf pangolin_nsc_2021-09-28.sif pangolin.sif
 
+# 2021 Oct 20 - pangoLEARN=2021-10-13 ; pangolin=v3.1.14
+docker build -t pangolin_nsc:2021-10-13 \
+    --build-arg PANGOLIN_LEARN_VERSION=2021-10-13 \
+    --build-arg PANGOLIN_VERSION=3.1.14 \
+    - < Docker/pangolin_Dockerfile
+docker save pangolin_nsc:2021-10-13 -o Docker/pangolin_nsc_2021-10-13_docker.tar
+singularity build pangolin_nsc_2021-10-13.sif docker-archive://Docker/pangolin_nsc_2021-10-13_docker.tar
+ln -sf pangolin_nsc_2021-10-13.sif pangolin.sif
+
+# 2021 Nov 03 - pangoLEARN=2021-10-18 ; pangolin=v3.1.16
+docker build -t pangolin_nsc:2021-10-18 \
+    --build-arg PANGOLIN_LEARN_VERSION=2021-10-18 \
+    --build-arg PANGOLIN_VERSION=3.1.16 \
+    - < Docker/pangolin_Dockerfile
+docker save pangolin_nsc:2021-10-18 -o Docker/pangolin_nsc_2021-10-18_docker.tar
+singularity build pangolin_nsc_2021-10-18.sif docker-archive://Docker/pangolin_nsc_2021-10-18_docker.tar
+ln -sf pangolin_nsc_2021-10-18.sif pangolin.sif
+
+
 
 # Check https://github.com/nextstrain/nextclade/releases
 # Specify the most recent release when you do docker pull
