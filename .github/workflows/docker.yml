@@ -34,6 +34,8 @@ jobs:
           file: ./Docker/pangolin_Dockerfile
           push: true
           tags: ${{ steps.prep.outputs.tags }}
+          cache-from: type=registry,ref=${{ step.prep.outputs.tags }}
+          cache-to: type=inline
   docker-nextclade:
     name: Create nextclade
     runs-on: ubuntu-latest
@@ -64,6 +66,8 @@ jobs:
           file: ./Docker/nextclade_Dockerfile
           push: true
           tags: ${{ steps.prep.outputs.tags }}
+          cache-from: type=registry,ref=${{ step.prep.outputs.tags }}
+          cache-to: type=inline
   docker-nsc_r:
     name: Create nsc_r image
     runs-on: ubuntu-latest
@@ -91,6 +95,8 @@ jobs:
           file: ./Docker/nsc_r_Dockerfile
           push: true
           tags: ${{ steps.prep.outputs.tags }}
+          cache-from: type=registry,ref=${{ step.prep.outputs.tags }}
+          cache-to: type=inline
   docker-nsc_python:
     name: Create nsc_python image
     runs-on: ubuntu-latest
@@ -118,6 +124,8 @@ jobs:
           file: ./Docker/nsc_python_Dockerfile
           push: true
           tags: ${{ steps.prep.outputs.tags }}
+          cache-from: type=registry,ref=${{ step.prep.outputs.tags }}
+          cache-to: type=inline
   docker-ivar:
     name: Create ivar 1.3 image
     runs-on: ubuntu-latest
@@ -145,6 +153,8 @@ jobs:
           file: ./Docker/ivar_1_3_Dockerfile
           push: true
           tags: ${{ steps.prep.outputs.tags }}
+          cache-from: type=registry,ref=${{ step.prep.outputs.tags }}
+          cache-to: type=inline
   docker-bcftools:
     name: Create bcftools image
     runs-on: ubuntu-latest
@@ -172,3 +182,5 @@ jobs:
           file: ./Docker/bcftools_1_11_Dockerfile
           push: true
           tags: ${{ steps.prep.outputs.tags }}
+          cache-from: type=registry,ref=${{ step.prep.outputs.tags }}
+          cache-to: type=inline
