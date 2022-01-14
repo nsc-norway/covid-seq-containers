@@ -10,8 +10,8 @@ singularity build nfcore_viralrecon_1.1.0.sif docker-archive://Docker/nfcore_vir
 docker save ghcr.io/nsc-norway/nsctrim:1.5.3 -o Docker/nsctrim-1.5.3_docker.tar 
 singularity build nsctrim-1.5.3.sif docker-archive://Docker/nsctrim-1.5.3_docker.tar 
 
-docker save garcianacho/csak:V2 -o Docker/garcianacho_csak_V2_docker.tar
-singularity build garcianacho_csak-V2.sif docker-archive://Docker/garcianacho_csak_V2_docker.tar
+docker save garcianacho/garcianacho/fhisc2:Illumina -o Docker/garcianacho-fhisc2-Illumina.tar
+singularity build garcianacho-fhisc2-Illumina.sif docker-archive://Docker/garcianacho-fhisc2-Illumina.tar
 
 # 2. Docker images created from  local Dockerfiles
 
@@ -204,6 +204,94 @@ docker build -t pangolin_nsc:2021-10-18 \
 docker save pangolin_nsc:2021-10-18 -o Docker/pangolin_nsc_2021-10-18_docker.tar
 singularity build pangolin_nsc_2021-10-18.sif docker-archive://Docker/pangolin_nsc_2021-10-18_docker.tar
 ln -sf pangolin_nsc_2021-10-18.sif pangolin.sif
+
+# 2021 Nov 03 - pangoLEARN=2021-11-04 ; pangolin=v3.1.16
+docker build -t pangolin_nsc:2021-11-04 \
+    --build-arg PANGOLIN_LEARN_VERSION=2021-11-04 \
+    --build-arg PANGOLIN_VERSION=3.1.16 \
+    - < Docker/pangolin_Dockerfile
+docker save pangolin_nsc:2021-11-04 -o Docker/pangolin_nsc_2021-11-04_docker.tar
+singularity build pangolin_nsc_2021-11-04.sif docker-archive://Docker/pangolin_nsc_2021-11-04_docker.tar
+ln -sf pangolin_nsc_2021-11-04.sif pangolin.sif
+
+# 2021 Nov 16 - pangoLEARN=2021-11-09 ; pangolin=v3.1.16
+docker build -t pangolin_nsc:2021-11-09 \
+    --build-arg PANGOLIN_LEARN_VERSION=2021-11-09 \
+    --build-arg PANGOLIN_VERSION=3.1.16 \
+    - < Docker/pangolin_Dockerfile
+docker save pangolin_nsc:2021-11-09 -o Docker/pangolin_nsc_2021-11-09_docker.tar
+singularity build pangolin_nsc_2021-11-09.sif docker-archive://Docker/pangolin_nsc_2021-11-09_docker.tar
+ln -sf pangolin_nsc_2021-11-09.sif pangolin.sif
+
+# 2021 Nov 23 - pangoLEARN=2021-11-18 ; pangolin=v3.1.16
+docker build -t pangolin_nsc:2021-11-18 \
+    --build-arg PANGOLIN_LEARN_VERSION=2021-11-18 \
+    --build-arg PANGOLIN_VERSION=3.1.16 \
+    - < Docker/pangolin_Dockerfile
+docker save pangolin_nsc:2021-11-18 -o Docker/pangolin_nsc_2021-11-18_docker.tar
+singularity build pangolin_nsc_2021-11-18.sif docker-archive://Docker/pangolin_nsc_2021-11-18_docker.tar
+ln -sf pangolin_nsc_2021-11-18.sif pangolin.sif
+
+# 2021 Dec 01 - pangoLEARN=2021-11-25 ; pangolin=v3.1.16
+docker build -t pangolin_nsc:2021-11-25 \
+    --build-arg PANGOLIN_LEARN_VERSION=2021-11-25 \
+    --build-arg PANGOLIN_VERSION=3.1.16 \
+    - < Docker/pangolin_Dockerfile
+docker save pangolin_nsc:2021-11-25 -o Docker/pangolin_nsc_2021-11-25_docker.tar
+singularity build pangolin_nsc_2021-11-25.sif docker-archive://Docker/pangolin_nsc_2021-11-25_docker.tar
+ln -sf pangolin_nsc_2021-11-25.sif pangolin.sif
+
+# 2021 Dec 09 - pangoLEARN=2021-11-25 ; pangolin=v3.1.17
+docker build -t pangolin_nsc:2021-11-25b \
+    --build-arg PANGOLIN_LEARN_VERSION=2021-11-25 \
+    --build-arg PANGOLIN_VERSION=3.1.17 \
+    - < Docker/pangolin_Dockerfile
+docker save pangolin_nsc:2021-11-25b -o Docker/pangolin_nsc_2021-11-25b_docker.tar
+singularity build pangolin_nsc_2021-11-25b.sif docker-archive://Docker/pangolin_nsc_2021-11-25b_docker.tar
+ln -sf pangolin_nsc_2021-11-25b.sif pangolin.sif
+
+# 2021 Dec 15 - pangoLEARN=2021-11-25 ; pangolin=v3.1.17
+docker build -t pangolin_nsc:2021-12-06 \
+    --build-arg PANGOLIN_LEARN_VERSION=2021-12-06 \
+    --build-arg PANGOLIN_VERSION=3.1.17 \
+    - < Docker/pangolin_Dockerfile
+docker save pangolin_nsc:2021-12-06 -o Docker/pangolin_nsc_2021-12-06_docker.tar
+singularity build pangolin_nsc_2021-12-06.sif docker-archive://Docker/pangolin_nsc_2021-12-06_docker.tar
+ln -sf pangolin_nsc_2021-12-06.sif pangolin.sif
+
+# 2022 Jan 10 - pangoLEARN=2022-01-05 ; pangolin=v3.1.17
+docker build -t pangolin_nsc:2022-01-05 \
+    --build-arg PANGOLIN_LEARN_VERSION=2022-01-05 \
+    --build-arg PANGOLIN_VERSION=3.1.17 \
+    - < Docker/pangolin_Dockerfile
+docker save pangolin_nsc:2022-01-05 -o Docker/pangolin_nsc_2022-01-05_docker.tar
+singularity build pangolin_nsc_2022-01-05.sif docker-archive://Docker/pangolin_nsc_2022-01-05_docker.tar
+ln -sf pangolin_nsc_2022-01-05.sif pangolin.sif
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
