@@ -268,9 +268,51 @@ docker save pangolin_nsc:2022-01-05 -o Docker/pangolin_nsc_2022-01-05_docker.tar
 singularity build pangolin_nsc_2022-01-05.sif docker-archive://Docker/pangolin_nsc_2022-01-05_docker.tar
 ln -sf pangolin_nsc_2022-01-05.sif pangolin.sif
 
+# 2022 Jan 26 - pangoLEARN=2022-01-20 ; pangolin=v3.1.17
+docker build -t pangolin_nsc:2022-01-20 \
+    --build-arg PANGOLIN_LEARN_VERSION=2022-01-20 \
+    --build-arg PANGOLIN_VERSION=3.1.17 \
+    - < Docker/pangolin_Dockerfile
+docker save pangolin_nsc:2022-01-20 -o Docker/pangolin_nsc_2022-01-20_docker.tar
+singularity build pangolin_nsc_2022-01-20.sif docker-archive://Docker/pangolin_nsc_2022-01-20_docker.tar
+ln -sf pangolin_nsc_2022-01-20.sif pangolin.sif
+
+# 2022 Jan 28 - pangoLEARN=2022-01-20 ; pangolin=v3.1.19
+docker build -t pangolin_nsc:2022-01-20b \
+    --build-arg PANGOLIN_LEARN_VERSION=2022-01-20 \
+    --build-arg PANGOLIN_VERSION=3.1.19 \
+    - < Docker/pangolin_Dockerfile
+docker save pangolin_nsc:2022-01-20b -o Docker/pangolin_nsc_2022-01-20b_docker.tar
+singularity build pangolin_nsc_2022-01-20b.sif docker-archive://Docker/pangolin_nsc_2022-01-20b_docker.tar
+ln -sf pangolin_nsc_2022-01-20b.sif pangolin.sif
+
+# 2022 Feb 09 - pangoLEARN=2022-02-02 ; pangolin=v3.1.20
+docker build -t pangolin_nsc:2022-02-02 \
+    --build-arg PANGOLIN_LEARN_VERSION=2022-02-02 \
+    --build-arg PANGOLIN_VERSION=3.1.20 \
+    - < Docker/pangolin_Dockerfile
+docker save pangolin_nsc:2022-02-02 -o Docker/pangolin_nsc_2022-02-02_docker.tar
+singularity build pangolin_nsc_2022-02-02.sif docker-archive://Docker/pangolin_nsc_2022-02-02_docker.tar
+ln -sf pangolin_nsc_2022-02-02.sif pangolin.sif
+
+# 2022 Feb 09 - pangoLEARN=2022-02-28 ; pangolin=v3.1.20
+docker build -t pangolin_nsc:2022-02-28 \
+    --build-arg PANGOLIN_LEARN_VERSION=2022-02-28 \
+    --build-arg PANGOLIN_VERSION=3.1.20 \
+    - < Docker/pangolin_Dockerfile
+docker save pangolin_nsc:2022-02-28 -o Docker/pangolin_nsc_2022-02-28_docker.tar
+singularity build pangolin_nsc_2022-02-28.sif docker-archive://Docker/pangolin_nsc_2022-02-28_docker.tar
+ln -sf pangolin_nsc_2022-02-28.sif pangolin.sif
 
 
-
+# 2022 Apr 04 - pangoLEARN=2022-03-22 ; pangolin=v3.1.20
+docker build -t pangolin_nsc:2022-03-22 \
+    --build-arg PANGOLIN_LEARN_VERSION=2022-03-22 \
+    --build-arg PANGOLIN_VERSION=3.1.20 \
+    - < Docker/pangolin_Dockerfile
+docker save pangolin_nsc:2022-03-22 -o Docker/pangolin_nsc_2022-03-22_docker.tar
+singularity build pangolin_nsc_2022-03-22.sif docker-archive://Docker/pangolin_nsc_2022-03-22_docker.tar
+ln -sf pangolin_nsc_2022-03-22.sif pangolin.sif
 
 
 

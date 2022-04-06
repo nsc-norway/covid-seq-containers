@@ -11,17 +11,20 @@ images.
 
 https://github.com/nsc-norway/covid-seq-containers/packages
 
-Packages in `main/` are the current development version, and release numbers correspond to the
-pipeline versions.
+Packages are tagged with the pipeline release versions. There are no docker images for the current
+development version of this repo.
 
 
 ## Important:
 
-Nextclade and Pangolin are updated more frequently than the pipeline releases, and the current
-versions of nextclade/pangolin may not be reflected here. If you use the pipeline, you should
-check for new pangolin and nextclade releases and update them. They can be built using the
+Pangolin is updated more frequently than the pipeline releases, and the current
+versions of pangolin may not be reflected here. If you use the pipeline, you should
+check for new pangolin releases and update them. They can be built using the
 dockerfiles in Docker/, see README_script_docker.
 
-https://github.com/nextstrain/nextclade/releases
-https://github.com/cov-lineages/pangoLEARN/releases
 https://github.com/cov-lineages/pangolin/releases
+https://github.com/cov-lineages/pangolin-data/releases
+
+Nextclade versions are no longer maintained in this pipeline. Because the alignment
+output of nextflow changed, we have to stick with version 1 to maintain consistency
+with old data.
