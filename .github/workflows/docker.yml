@@ -1,7 +1,7 @@
 on:
   push:
     tags:
-      - "v.*"
+      - "*"
 jobs:
   docker-pangolin:
     name: Create pangolin image
