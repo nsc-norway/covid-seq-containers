@@ -315,6 +315,19 @@ singularity build pangolin_nsc_2022-03-22.sif docker-archive://Docker/pangolin_n
 ln -sf pangolin_nsc_2022-03-22.sif pangolin.sif
 
 
+# -- Pipeline v12 --
+# 2022 Apr 07
+export PANGOLIN_VERSION="4.0.2"
+export PANGOLIN_DATA_VERSION="1.2.133"
+
+docker build -t pangolin_nsc:dv$PANGOLIN_DATA_VERSION \
+    --build-arg PANGOLIN_DATA_VERSION \
+    --build-arg PANGOLIN_VERSION \
+    - < Docker/pangolin_Dockerfile
+docker save pangolin_nsc:dv$PANGOLIN_DATA_VERSION -o Docker/pangolin_nsc_dv${PANGOLIN_DATA_VERSION}_docker.tar
+singularity build pangolin_nsc_dv${PANGOLIN_DATA_VERSION}.sif docker-archive://Docker/pangolin_nsc_dv${PANGOLIN_DATA_VERSION}_docker.tar
+ln -sf pangolin_nsc_dv${PANGOLIN_DATA_VERSION}.sif pangolin.sif
+
 
 
 
