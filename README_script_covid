@@ -317,7 +317,7 @@ ln -sf pangolin_nsc_2022-03-22.sif pangolin.sif
 
 # -- Pipeline v12 --
 # 2022 Apr 07
-export PANGOLIN_VERSION="4.0.2"
+export PANGOLIN_VERSION="4.0.3"
 export PANGOLIN_DATA_VERSION="1.2.133"
 
 docker build -t pangolin_nsc:dv$PANGOLIN_DATA_VERSION \
