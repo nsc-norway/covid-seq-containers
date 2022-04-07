@@ -12,12 +12,12 @@ jobs:
       - name: Prepare
         id: prep
         run: |
-          PANGOLIN_VERSION=3.1.17
-          PANGOLIN_LEARN_VERSION=2022-01-05
+          PANGOLIN_VERSION=4.0.2
+          PANGOLIN_DATA_VERSION=1.2.133
           BASE_PATH=ghcr.io/${{ github.repository_owner }}/covid-seq-containers
-          TAGS="${BASE_PATH}/${GITHUB_REF_SLUG}/pangolin_nsc:$PANGOLIN_LEARN_VERSION"
+          TAGS="${BASE_PATH}/${GITHUB_REF_SLUG}/pangolin_nsc:latest"
           echo ::set-output name=tags::${TAGS}
-          echo ::set-output name=PANGOLIN_LEARN_VERSION::${PANGOLIN_LEARN_VERSION}
+          echo ::set-output name=PANGOLIN_DATA_VERSION::${PANGOLIN_DATA_VERSION}
           echo ::set-output name=PANGOLIN_VERSION::${PANGOLIN_VERSION}
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
@@ -32,7 +32,7 @@ jobs:
         with:
           context: .
           build-args: |
-              PANGOLIN_LEARN_VERSION=${{ steps.prep.outputs.PANGOLIN_LEARN_VERSION }}
+              PANGOLIN_DATA_VERSION=${{ steps.prep.outputs.PANGOLIN_DATA_VERSION }}
               PANGOLIN_VERSION=${{ steps.prep.outputs.PANGOLIN_VERSION }}
           file: ./Docker/pangolin_Dockerfile
           push: true
