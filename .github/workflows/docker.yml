@@ -12,8 +12,8 @@ jobs:
       - name: Prepare
         id: prep
         run: |
-          PANGOLIN_VERSION=4.0.3
-          PANGOLIN_DATA_VERSION=1.2.133
+          PANGOLIN_VERSION=4.2
+          PANGOLIN_DATA_VERSION=1.18
           BASE_PATH=ghcr.io/${{ github.repository_owner }}/covid-seq-containers
           TAGS="${BASE_PATH}/${GITHUB_REF_SLUG}/pangolin_nsc:latest"
           echo ::set-output name=tags::${TAGS}
