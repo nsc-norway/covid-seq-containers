@@ -315,6 +315,8 @@ singularity build pangolin_nsc_2022-03-22.sif docker-archive://Docker/pangolin_n
 ln -sf pangolin_nsc_2022-03-22.sif pangolin.sif
 
 
+
+
 # -- Pipeline v12 --
 # 2022 Apr 07
 export PANGOLIN_VERSION="4.0.3"
@@ -330,23 +332,210 @@ ln -sf pangolin_nsc_dv${PANGOLIN_DATA_VERSION}.sif pangolin.sif
 
 
 
+# 2022 Apr 11
+export PANGOLIN_VERSION="4.0.4"
+export PANGOLIN_DATA_VERSION="1.3"
+
+docker build -t pangolin_nsc:dv$PANGOLIN_DATA_VERSION \
+    --build-arg PANGOLIN_DATA_VERSION \
+    --build-arg PANGOLIN_VERSION \
+    - < Docker/pangolin_Dockerfile
+docker save pangolin_nsc:dv$PANGOLIN_DATA_VERSION -o Docker/pangolin_nsc_dv${PANGOLIN_DATA_VERSION}_docker.tar
+
+export PANGOLIN_VERSION="4.0.4"
+export PANGOLIN_DATA_VERSION="1.3"
+singularity build pangolin_nsc_dv${PANGOLIN_DATA_VERSION}.sif docker-archive://Docker/pangolin_nsc_dv${PANGOLIN_DATA_VERSION}_docker.tar
+rm pangolin.sif
+ln -s pangolin_nsc_dv${PANGOLIN_DATA_VERSION}.sif pangolin.sif
 
 
 
 
 
+# 2022 Apr 22
+export PANGOLIN_VERSION="4.0.6"
+export PANGOLIN_DATA_VERSION="1.6"
+
+docker build -t pangolin_nsc:dv$PANGOLIN_DATA_VERSION \
+    --build-arg PANGOLIN_DATA_VERSION \
+    --build-arg PANGOLIN_VERSION \
+    - < Docker/pangolin_Dockerfile
+docker save pangolin_nsc:dv$PANGOLIN_DATA_VERSION -o Docker/pangolin_nsc_dv${PANGOLIN_DATA_VERSION}_docker.tar
+
+export PANGOLIN_VERSION="4.0.6"
+export PANGOLIN_DATA_VERSION="1.6"
+singularity build pangolin_nsc_dv${PANGOLIN_DATA_VERSION}.sif docker-archive://Docker/pangolin_nsc_dv${PANGOLIN_DATA_VERSION}_docker.tar
+rm pangolin.sif
+ln -s pangolin_nsc_dv${PANGOLIN_DATA_VERSION}.sif pangolin.sif
+
+
+
+# 2022 Apr 28
+export PANGOLIN_VERSION="4.0.6"
+export PANGOLIN_DATA_VERSION="1.8"
+
+docker build -t pangolin_nsc:dv$PANGOLIN_DATA_VERSION \
+    --build-arg PANGOLIN_DATA_VERSION \
+    --build-arg PANGOLIN_VERSION \
+    - < Docker/pangolin_Dockerfile
+docker save pangolin_nsc:dv$PANGOLIN_DATA_VERSION -o Docker/pangolin_nsc_dv${PANGOLIN_DATA_VERSION}_docker.tar
+
+export PANGOLIN_VERSION="4.0.6"
+export PANGOLIN_DATA_VERSION="1.8"
+singularity build pangolin_nsc_dv${PANGOLIN_DATA_VERSION}.sif docker-archive://Docker/pangolin_nsc_dv${PANGOLIN_DATA_VERSION}_docker.tar
+rm pangolin.sif
+ln -s pangolin_nsc_dv${PANGOLIN_DATA_VERSION}.sif pangolin.sif
 
 
 
 
+# 2022 May 27
+export PANGOLIN_VERSION="4.0.6"
+export PANGOLIN_DATA_VERSION="1.9"
+
+docker build -t pangolin_nsc:dv$PANGOLIN_DATA_VERSION \
+    --build-arg PANGOLIN_DATA_VERSION \
+    --build-arg PANGOLIN_VERSION \
+    - < Docker/pangolin_Dockerfile
+docker save pangolin_nsc:dv$PANGOLIN_DATA_VERSION -o Docker/pangolin_nsc_dv${PANGOLIN_DATA_VERSION}_docker.tar
+
+export PANGOLIN_DATA_VERSION="1.9"
+singularity build pangolin_nsc_dv${PANGOLIN_DATA_VERSION}.sif docker-archive://Docker/pangolin_nsc_dv${PANGOLIN_DATA_VERSION}_docker.tar
+rm pangolin.sif
+ln -s pangolin_nsc_dv${PANGOLIN_DATA_VERSION}.sif pangolin.sif
 
 
 
 
+# 2022 Jun 30
+export PANGOLIN_VERSION="4.1"
+export PANGOLIN_DATA_VERSION="1.11"
+
+docker build -t pangolin_nsc:dv$PANGOLIN_DATA_VERSION \
+    --build-arg PANGOLIN_DATA_VERSION \
+    --build-arg PANGOLIN_VERSION \
+    - < Docker/pangolin_Dockerfile
+docker save pangolin_nsc:dv$PANGOLIN_DATA_VERSION -o Docker/pangolin_nsc_dv${PANGOLIN_DATA_VERSION}_docker.tar
+
+export PANGOLIN_DATA_VERSION="1.11"
+singularity build pangolin_nsc_dv${PANGOLIN_DATA_VERSION}.sif docker-archive://Docker/pangolin_nsc_dv${PANGOLIN_DATA_VERSION}_docker.tar
+rm pangolin.sif
+ln -s pangolin_nsc_dv${PANGOLIN_DATA_VERSION}.sif pangolin.sif
+
+
+
+# 2022 Jul 14
+export PANGOLIN_VERSION="4.1.2"
+export PANGOLIN_DATA_VERSION="1.12"
+
+docker build -t pangolin_nsc:dv$PANGOLIN_DATA_VERSION \
+    --build-arg PANGOLIN_DATA_VERSION \
+    --build-arg PANGOLIN_VERSION \
+    - < Docker/pangolin_Dockerfile
+docker save pangolin_nsc:dv$PANGOLIN_DATA_VERSION -o Docker/pangolin_nsc_dv${PANGOLIN_DATA_VERSION}_docker.tar
+
+export PANGOLIN_DATA_VERSION="1.12"
+singularity build pangolin_nsc_dv${PANGOLIN_DATA_VERSION}.sif docker-archive://Docker/pangolin_nsc_dv${PANGOLIN_DATA_VERSION}_docker.tar
+rm pangolin.sif
+ln -s pangolin_nsc_dv${PANGOLIN_DATA_VERSION}.sif pangolin.sif
 
 
 
 
+# 2022 Aug 08
+export PANGOLIN_VERSION="4.1.2"
+export PANGOLIN_DATA_VERSION="1.13"
+
+docker build -t pangolin_nsc:dv$PANGOLIN_DATA_VERSION \
+    --build-arg PANGOLIN_DATA_VERSION \
+    --build-arg PANGOLIN_VERSION \
+    - < Docker/pangolin_Dockerfile
+docker save pangolin_nsc:dv$PANGOLIN_DATA_VERSION -o Docker/pangolin_nsc_dv${PANGOLIN_DATA_VERSION}_docker.tar
+
+export PANGOLIN_DATA_VERSION="1.13"
+singularity build pangolin_nsc_dv${PANGOLIN_DATA_VERSION}.sif docker-archive://Docker/pangolin_nsc_dv${PANGOLIN_DATA_VERSION}_docker.tar
+rm pangolin.sif
+ln -s pangolin_nsc_dv${PANGOLIN_DATA_VERSION}.sif pangolin.sif
+
+
+# 2022 Aug 30
+export PANGOLIN_VERSION="4.1.2"
+export PANGOLIN_DATA_VERSION="1.14"
+
+docker build -t pangolin_nsc:dv$PANGOLIN_DATA_VERSION \
+    --build-arg PANGOLIN_DATA_VERSION \
+    --build-arg PANGOLIN_VERSION \
+    - < Docker/pangolin_Dockerfile
+docker save pangolin_nsc:dv$PANGOLIN_DATA_VERSION -o Docker/pangolin_nsc_dv${PANGOLIN_DATA_VERSION}_docker.tar
+
+export PANGOLIN_DATA_VERSION="1.14"
+singularity build pangolin_nsc_dv${PANGOLIN_DATA_VERSION}.sif docker-archive://Docker/pangolin_nsc_dv${PANGOLIN_DATA_VERSION}_docker.tar
+rm pangolin.sif
+ln -s pangolin_nsc_dv${PANGOLIN_DATA_VERSION}.sif pangolin.sif
+
+
+# 2022 Oct 14
+export PANGOLIN_VERSION="4.1.3"
+export PANGOLIN_DATA_VERSION="1.15.1"
+
+docker build -t pangolin_nsc:dv$PANGOLIN_DATA_VERSION \
+    --build-arg PANGOLIN_DATA_VERSION \
+    --build-arg PANGOLIN_VERSION \
+    - < Docker/pangolin_Dockerfile
+docker save pangolin_nsc:dv$PANGOLIN_DATA_VERSION -o Docker/pangolin_nsc_dv${PANGOLIN_DATA_VERSION}_docker.tar
+
+export PANGOLIN_DATA_VERSION="1.15.1"
+singularity build pangolin_nsc_dv${PANGOLIN_DATA_VERSION}.sif docker-archive://Docker/pangolin_nsc_dv${PANGOLIN_DATA_VERSION}_docker.tar
+rm pangolin.sif
+ln -s pangolin_nsc_dv${PANGOLIN_DATA_VERSION}.sif pangolin.sif
+
+
+# 2022 Nov 08
+export PANGOLIN_VERSION="4.1.3"
+export PANGOLIN_DATA_VERSION="1.16"
+
+docker build -t pangolin_nsc:dv$PANGOLIN_DATA_VERSION \
+    --build-arg PANGOLIN_DATA_VERSION \
+    --build-arg PANGOLIN_VERSION \
+    - < Docker/pangolin_Dockerfile
+docker save pangolin_nsc:dv$PANGOLIN_DATA_VERSION -o Docker/pangolin_nsc_dv${PANGOLIN_DATA_VERSION}_docker.tar
+
+export PANGOLIN_DATA_VERSION="1.16"
+singularity build pangolin_nsc_dv${PANGOLIN_DATA_VERSION}.sif docker-archive://Docker/pangolin_nsc_dv${PANGOLIN_DATA_VERSION}_docker.tar
+rm pangolin.sif
+ln -s pangolin_nsc_dv${PANGOLIN_DATA_VERSION}.sif pangolin.sif
+
+
+# 2022 Dec 13
+export PANGOLIN_VERSION="4.1.3"
+export PANGOLIN_DATA_VERSION="1.17"
+
+docker build -t pangolin_nsc:dv$PANGOLIN_DATA_VERSION \
+    --build-arg PANGOLIN_DATA_VERSION \
+    --build-arg PANGOLIN_VERSION \
+    - < Docker/pangolin_Dockerfile
+docker save pangolin_nsc:dv$PANGOLIN_DATA_VERSION -o Docker/pangolin_nsc_dv${PANGOLIN_DATA_VERSION}_docker.tar
+
+export PANGOLIN_DATA_VERSION="1.17"
+singularity build pangolin_nsc_dv${PANGOLIN_DATA_VERSION}.sif docker-archive://Docker/pangolin_nsc_dv${PANGOLIN_DATA_VERSION}_docker.tar
+rm pangolin.sif
+ln -s pangolin_nsc_dv${PANGOLIN_DATA_VERSION}.sif pangolin.sif
+
+
+# 2022 Jan 22
+export PANGOLIN_VERSION="4.2"
+export PANGOLIN_DATA_VERSION="1.18"
+
+docker build -t pangolin_nsc:dv$PANGOLIN_DATA_VERSION \
+    --build-arg PANGOLIN_DATA_VERSION \
+    --build-arg PANGOLIN_VERSION \
+    - < Docker/pangolin_Dockerfile
+docker save pangolin_nsc:dv$PANGOLIN_DATA_VERSION -o Docker/pangolin_nsc_dv${PANGOLIN_DATA_VERSION}_docker.tar
+
+export PANGOLIN_DATA_VERSION="1.18"
+singularity build pangolin_nsc_dv${PANGOLIN_DATA_VERSION}.sif docker-archive://Docker/pangolin_nsc_dv${PANGOLIN_DATA_VERSION}_docker.tar
+rm pangolin.sif
+ln -s pangolin_nsc_dv${PANGOLIN_DATA_VERSION}.sif pangolin.sif
 
 
 
